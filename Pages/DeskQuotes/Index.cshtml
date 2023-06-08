@@ -1,0 +1,61 @@
+﻿@page
+@model MegaDesk3._0.Pages.DeskQuotes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DeliveryType.DeliveryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DesktopMaterial.DesktopMaterialName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].TotalCost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryType.DeliveryStringName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesktopMaterial.DesktopMaterialName)
+            </td>
+            <td>
+                $
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
