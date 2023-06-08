@@ -10,6 +10,19 @@
 <p>
     <a asp-page="Create">Create Desk Order</a>
 </p>
+
+<!--Search Form.-->
+<form>
+    <p>
+         Order Date: <select asp-for="OrderDate" asp-items="Model.OrderDates">
+            <option value="">All</option>
+        </select>
+
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
