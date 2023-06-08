@@ -18,9 +18,12 @@ namespace MegaDesk3._0.Models
         public string CustomerName { get; set; }
 
 
+        [Display(Name = "Order Date")]
         [DataType(DataType.Date)]
         public DateTime DateCreated { get; set; }
 
+
+        [Display(Name = "Total Cost")]
         public decimal TotalCost { get; set; }
 
         /* Foreign Key */
