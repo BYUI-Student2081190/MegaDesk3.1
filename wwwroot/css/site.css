@@ -1,7 +1,66 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Montserrat&display=swap');
+
+/*How to call fonts in CSS:
+
+    font-family: 'Gasoek One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
+*/
+
+/* Shared between all pages. */
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
+h1, a.navbar-brand {
+    font-family: 'Gasoek One', sans-serif;
+}
+
+td, th, p, a.nav-link, label, footer {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+form#filterForm {
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    margin-top: 2em;
+}
+
+form#filterForm div{
+    text-align: end
+}
+
+input.btn.btn-primary {
+    margin: 1em 0;
+    background-color: #fec152;
+    color: #000;
+    border-color: #fec152;
+}
+
+input.btn.btn-primary:hover {
+    background-color: #ffff;
+}
+
+nav#overide {
+    background-color: #fec152;
+}
+
+th.hide{
+    display: none;
+}
+
+td.hide{
+    display: none;
+}
+
+/*Large Screen*/
 @media (min-width: 768px) {
   html {
     font-size: 16px;

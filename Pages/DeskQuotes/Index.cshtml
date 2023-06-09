@@ -7,21 +7,27 @@
 
 <h1>Desk Orders</h1>
 
+
+<!--Search Form.-->
+<form id="filterForm">
+    <div>
+        <p>
+            Customer Name: <input type="text" asp-for="SearchString" />
+        </p>
+        <p>
+             Order Date: <select asp-for="OrderDate" asp-items="Model.OrderDates">
+                <option value="">All</option>
+            </select>
+        </p>
+    </div>
+    <p>
+        <input class="btn btn-primary" type="submit" value="Filter" />
+    </p>
+</form>
+
 <p>
     <a asp-page="Create">Create Desk Order</a>
 </p>
-
-<!--Search Form.-->
-<form>
-    <p>
-         Order Date: <select asp-for="OrderDate" asp-items="Model.OrderDates">
-            <option value="">All</option>
-        </select>
-
-        Title: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
 
 <table class="table">
     <thead>
@@ -32,10 +38,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].DateCreated)
             </th>
-            <th>
+            <th class="hide">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].DeliveryType.DeliveryName)
             </th>
-            <th>
+            <th class="hide">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].DesktopMaterial.DesktopMaterialName)
             </th>
             <th>
@@ -53,10 +59,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DateCreated)
             </td>
-            <td>
+            <td class="hide">
                 @Html.DisplayFor(modelItem => item.DeliveryType.DeliveryStringName)
             </td>
-            <td>
+            <td class="hide">
                 @Html.DisplayFor(modelItem => item.DesktopMaterial.DesktopMaterialName)
             </td>
             <td>
